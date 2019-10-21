@@ -1,0 +1,31 @@
+{
+  "name": "@phomea/react-native-buttons",
+  "version": "0.0.1",
+  "description": "A collection of react native buttons",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phomea/react-native-buttons.git"
+  },
+  "keywords": [
+    "react-native",
+    "button",
+    "loading",
+    "button",
+    "bound",
+    "button",
+    "small",
+    "button",
+    "buttons",
+    "react-native-buttons"
+  ],
+  "author": "phomea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phomea/react-native-buttons/issues"
+  },
+  "homepage": "https://github.com/phomea/react-native-buttons#readme"
+}
