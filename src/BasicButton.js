@@ -1,13 +1,10 @@
 import React from 'react';
 import {
-  View,
   StyleSheet,
   Text,
   TouchableNativeFeedback,
   Animated,
-  Easing,
 } from 'react-native';
-import Touchable from './Touchable';
 import animations from './animations';
 
 const styles = StyleSheet.create({
