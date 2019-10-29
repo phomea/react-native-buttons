@@ -1,9 +1,6 @@
 import React from 'react';
 import {
-  View,
   StyleSheet,
-  Text,
-  TouchableNativeFeedback,
   ActivityIndicator,
   Animated,
 } from 'react-native';
