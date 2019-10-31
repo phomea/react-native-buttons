@@ -1,13 +1,11 @@
 import React from 'react';
 import {
-  View,
   StyleSheet,
   Text,
   TouchableNativeFeedback,
   Animated,
   Easing
 } from 'react-native';
-import Touchable from './Touchable';
 import animations from './animations';
 import { defaultAnimation, buttonsGlobalConfig, getButtonsConfig } from './ButtonsConfig';
 
