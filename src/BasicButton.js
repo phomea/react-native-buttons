@@ -5,10 +5,11 @@ import {
   Text,
   TouchableNativeFeedback,
   Animated,
-  Easing,
+  Easing
 } from 'react-native';
 import Touchable from './Touchable';
 import animations from './animations';
+import { defaultAnimation, buttonsGlobalConfig, getButtonsConfig } from './ButtonsConfig';
 
 const styles = StyleSheet.create({
   button: {
@@ -95,9 +96,9 @@ class BasicButton extends React.Component {
       <Animated.View
         style={{
           ...styles.button,
-          ...buttonStyle,
           ...bgColor,
           alignSelf: full ? 'auto' : 'center',
+          ...buttonStyle,
           transform: [
             {
               scale: this.animateScale,
@@ -134,7 +135,7 @@ class BasicButton extends React.Component {
   }
 }
 BasicButton.defaultProps = {
-  animation: 'standard',
+  animation: getButtonsConfig().animation,
   color: 'grey',
   textStyle: {},
   buttonStyle: {},

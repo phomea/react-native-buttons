@@ -1,6 +1,6 @@
 {
   "name": "@phomea/react-native-buttons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A collection of react native buttons",
   "main": "index.js",
   "scripts": {
