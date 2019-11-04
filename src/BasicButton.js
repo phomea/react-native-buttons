@@ -67,9 +67,10 @@ class BasicButton extends React.Component {
       <Text
         style={{
           ...styles.text,
-          ...this.props.textStyle,
+         
           ...textColor,
           ...override,
+          ...this.props.textStyle,
         }}>
         {this.props.title}
       </Text>
