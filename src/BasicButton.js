@@ -2,12 +2,18 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
+  TouchableOpacity,
   TouchableNativeFeedback,
   Animated,
-  Easing
+  Easing,
+  Platform,
 } from 'react-native';
 import animations from './animations';
 import { defaultAnimation, buttonsGlobalConfig, getButtonsConfig } from './ButtonsConfig';
+
+const Touchable = Platform.OS == "ios" ? TouchableOpacity : TouchableNativeFeedback
+
+
 
 const styles = StyleSheet.create({
   button: {
@@ -130,12 +136,12 @@ class BasicButton extends React.Component {
     const props = this.props;
     const {style} = props;
     return (
-      <TouchableNativeFeedback
+      <Touchable
         onPress={this.onPress}
         style={{...style}}
         onLayout={this.onLayout}>
         {this.renderButton()}
-      </TouchableNativeFeedback>
+      </Touchable>
     );
   }
 }
