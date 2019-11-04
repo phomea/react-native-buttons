@@ -90,6 +90,12 @@ class BasicButton extends React.Component {
       override.paddingVertical = 12;
       override.borderRadius = 30;
     }
+
+
+    const rotation = this.animateRotation.interpolate({
+      inputRange : [0,360],
+      outputRange : ["0deg","360deg"]
+    })
     return (
       <Animated.View
         style={{
@@ -102,7 +108,7 @@ class BasicButton extends React.Component {
               scale: this.animateScale,
             },
             {
-              rotate: this.animateRotation,
+              rotate: rotation,
             },
           ],
           ...override,
