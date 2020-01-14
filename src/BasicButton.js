@@ -137,6 +137,7 @@ class BasicButton extends React.Component {
     const {style} = props;
     return (
       <Touchable
+        {...props}
         onPress={this.onPress}
         style={{...style}}
         onLayout={this.onLayout}>
