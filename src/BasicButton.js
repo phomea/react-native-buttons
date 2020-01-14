@@ -2,10 +2,18 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
+  TouchableOpacity,
   TouchableNativeFeedback,
   Animated,
+  Easing,
+  Platform,
 } from 'react-native';
 import animations from './animations';
+import { defaultAnimation, buttonsGlobalConfig, getButtonsConfig } from './ButtonsConfig';
+
+const Touchable = Platform.OS == "ios" ? TouchableOpacity : TouchableNativeFeedback
+
+
 
 const styles = StyleSheet.create({
   button: {
@@ -65,9 +73,10 @@ class BasicButton extends React.Component {
       <Text
         style={{
           ...styles.text,
-          ...this.props.textStyle,
+         
           ...textColor,
           ...override,
+          ...this.props.textStyle,
         }}>
         {this.props.title}
       </Text>
@@ -88,19 +97,25 @@ class BasicButton extends React.Component {
       override.paddingVertical = 12;
       override.borderRadius = 30;
     }
+
+
+    const rotation = this.animateRotation.interpolate({
+      inputRange : [0,360],
+      outputRange : ["0deg","360deg"]
+    })
     return (
       <Animated.View
         style={{
           ...styles.button,
-          ...buttonStyle,
           ...bgColor,
           alignSelf: full ? 'auto' : 'center',
+          ...buttonStyle,
           transform: [
             {
               scale: this.animateScale,
             },
             {
-              rotate: this.animateRotation,
+              rotate: rotation,
             },
           ],
           ...override,
@@ -121,17 +136,17 @@ class BasicButton extends React.Component {
     const props = this.props;
     const {style} = props;
     return (
-      <TouchableNativeFeedback
+      <Touchable
         onPress={this.onPress}
         style={{...style}}
         onLayout={this.onLayout}>
         {this.renderButton()}
-      </TouchableNativeFeedback>
+      </Touchable>
     );
   }
 }
 BasicButton.defaultProps = {
-  animation: 'standard',
+  animation: getButtonsConfig().animation,
   color: 'grey',
   textStyle: {},
   buttonStyle: {},
